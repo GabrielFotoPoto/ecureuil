@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Écureuil — sauvegarde Instagram",
+  "version": "0.1.0",
+  "description": "Sauvegarde locale de VOS médias Instagram, pour un usage privé.",
+  "permissions": ["downloads", "storage"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Écureuil"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

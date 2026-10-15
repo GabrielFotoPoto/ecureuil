@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        width: 300px;
+        margin: 0;
+        padding: 12px;
+        color: #1a1a1a;
+      }
+      h1 {
+        font-size: 15px;
+        margin: 0 0 8px;
+      }
+      .note {
+        font-size: 11px;
+        color: #555;
+        background: #f3f3f3;
+        border-radius: 6px;
+        padding: 8px;
+        margin-bottom: 10px;
+        line-height: 1.35;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        margin: 6px 0;
+      }
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-top: 2px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+      #status {
+        font-size: 12px;
+        margin-top: 10px;
+        min-height: 16px;
+        color: #0a5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🐿️ Écureuil</h1>
+    <div class="note">
+      Sauvegarde de <b>vos</b> médias Instagram pour un <b>usage privé</b>. Les
+      contenus restent protégés par le droit d'auteur ; ne les rediffusez pas.
+      Ouvrez votre profil sur instagram.com avant de lancer.
+    </div>
+
+    <label>
+      <input type="checkbox" id="accept" />
+      J'utilise ceci pour un usage strictement privé.
+    </label>
+    <label>
+      Nom de compte (dossier)
+      <input type="text" id="account" placeholder="me" />
+    </label>
+    <label>
+      <input type="checkbox" id="skipv" />
+      Images seulement (ignorer les vidéos)
+    </label>
+
+    <button id="start" disabled>Sauvegarder mon compte</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
